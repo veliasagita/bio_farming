@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "831976547070",
+    "project_id": "biofarming-9859f",
+    "storage_bucket": "biofarming-9859f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831976547070:android:8b1a13e03547c8c3be3baf",
+        "android_client_info": {
+          "package_name": "com.ptbio.biofarming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831976547070-md0got3mm9shipdbme179en36n0pv01u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ0G4OEtoz4c5L0yoqkAGNGbuB4Suuezw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831976547070-md0got3mm9shipdbme179en36n0pv01u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
