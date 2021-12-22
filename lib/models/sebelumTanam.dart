@@ -1,12 +1,12 @@
 import 'dart:core';
 
-class Persiapan {
+class SebelumTanam {
   String persiapanTanah;
   String? persiapanBenih;
 
-  Persiapan(this.persiapanTanah, this.persiapanBenih);
+  SebelumTanam(this.persiapanTanah, this.persiapanBenih);
 
-  Persiapan.fromJson(Map<String, dynamic> json)
+  SebelumTanam.fromJson(Map<String, dynamic> json)
       : persiapanTanah = json['persiapanTanah'],
         persiapanBenih = json['persiapanBenih'];
   Map<String, dynamic> toJson() =>
