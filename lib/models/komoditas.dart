@@ -1,5 +1,5 @@
 import 'dart:core';
-import 'sebelumTanam.dart';
+import 'sebelum_tanam.dart';
 
 class Komoditas {
   //variable
