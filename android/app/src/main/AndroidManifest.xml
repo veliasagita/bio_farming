@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bio_farming">
    <application
-        android:label="bio_farming"
+        android:label="Bio Farming"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
