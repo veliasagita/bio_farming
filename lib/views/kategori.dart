@@ -25,17 +25,18 @@ class _KategoriState extends State<Kategori> {
   final firestoreInstance = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
-    var list = [];
+    var list;
     firestoreInstance.collection("kategori").get().then((querySnapshot) {
       // print(querySnapshot.docs.sublist(0));
       // print(querySnapshot);
       // querySnapshot.docs.forEach((result) {
-        // print(result.data());
-        // Iterable value = result.data().values;
-        // list.add(value); //ini blm masuk array
+      // print(result.data());
+      // Iterable value = result.data().values;
+      // list.add(value); //ini blm masuk array
       // });
-      
+      list = querySnapshot.docs.map((e) => e.data());
     });
+    print(list);
     return Scaffold(
       appBar: AppBar(title: const Text("Bio Farming")),
       // body: AnimatedList(

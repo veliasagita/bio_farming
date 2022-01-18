@@ -39,7 +39,9 @@ dependencies:
   cloud_firestore: ^3.1.5
   flutter_svg: ^1.0.0
   carousel_slider: ^4.0.0
-
+  font_awesome_flutter: ^8.5.0
+  cached_network_image: ^3.2.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
