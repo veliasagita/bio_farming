@@ -6,6 +6,10 @@ boolean_selector
 2.12
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib/
+carousel_slider
+2.12
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.0.0/
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.0.0/lib/
 characters
 2.12
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0/
@@ -60,8 +64,8 @@ file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-3.3.5/
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-3.3.5/lib/
 firebase_core
 2.12
-file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.10.6/
-file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.10.6/lib/
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.11.0/
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.11.0/lib/
 firebase_core_platform_interface
 2.12
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.2.3/
