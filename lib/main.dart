@@ -1,5 +1,10 @@
 import 'package:bio_farming/views/init.dart';
 import 'package:bio_farming/views/splashscreen.dart';
+// import 'package:bio_farming/views/product_card.dart';
+import 'package:bio_farming/views/anim3.dart';
+import 'package:bio_farming/views/recipe_details.dart';
+import 'package:bio_farming/views/recipe_list.dart';
+import 'package:bio_farming/views/recipe_single.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
