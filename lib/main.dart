@@ -1,12 +1,6 @@
 import 'package:bio_farming/views/splashscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
-// import 'package:bio_farming/views/product_card.dart';
-import 'package:bio_farming/views/anim3.dart';
-import 'package:bio_farming/views/recipe_details.dart';
-import 'package:bio_farming/views/recipe_list.dart';
-import 'package:bio_farming/views/recipe_single.dart';
 import 'package:flutter/material.dart';
-
 import 'firebase_options.dart';
 
 void main() async {
@@ -35,7 +29,6 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       home: const SplashScreen(),
     );
   }
