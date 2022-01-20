@@ -15,22 +15,22 @@ class _MySplashScreen extends State<SplashScreen> {
     super.initState();
     Timer(
         const Duration(seconds: 3),
-        () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const Kategori())));
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => Kategori())));
   }
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        const Scaffold(
+          backgroundColor: Colors.white,
+        ),
         Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/logo-bio.png'),
                     alignment: Alignment.center))),
-        const Scaffold(
-          backgroundColor: Colors.white,
-        )
       ],
     );
     // return Container(

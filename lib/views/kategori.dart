@@ -1,41 +1,32 @@
-// import 'package:flutter/material.dart';
-
-// class Kategori extends StatelessWidget {
-//   const Kategori({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: const Text("Bio Farming")),
-
-//     );
-//   }
-// }
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class Kategori extends StatefulWidget {
+class Kategori extends StatelessWidget {
   const Kategori({Key? key}) : super(key: key);
 
   @override
-  _KategoriState createState() => _KategoriState();
-}
-
-class _KategoriState extends State<Kategori> {
-  final firestoreInstance = FirebaseFirestore.instance;
-  @override
   Widget build(BuildContext context) {
-    Iterable value = [];
-    firestoreInstance.collection("kategori").get().then((querySnapshot) {
-      for (var result in querySnapshot.docs) {
-        value = result.data().values;
-      }
-    });
+    final db = FirebaseFirestore.instance;
     return Scaffold(
-      appBar: AppBar(title: const Text("Bio Farming")),
-      // body: AnimatedList(
-
-      // ),
+      body: StreamBuilder<QuerySnapshot>(
+          stream: db.collection('kategori').snapshots(),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            } else {
+              return ListView(
+                children: snapshot.data!.docs.map((doc) {
+                  return Card(
+                    child: ListTile(
+                      title: Text(doc.get('nama') ?? doc.get('nama')),
+                    ),
+                  );
+                }).toList(),
+              );
+            }
+          }),
     );
   }
 }

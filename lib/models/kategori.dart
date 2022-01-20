@@ -8,7 +8,7 @@ class Kategori {
 
   Kategori.fromJson(Map<String, dynamic> json)
       : id = json['id'],
-        nama = json['name'];
+        nama = json['nama'];
 
   Map<String, dynamic> toJson() => {'id': id, 'nama': nama};
 }
