@@ -33,10 +33,5 @@ class _MySplashScreen extends State<SplashScreen> {
                     alignment: Alignment.center))),
       ],
     );
-    // return Container(
-    //     decoration: const BoxDecoration(
-    //         image: DecorationImage(
-    //             image: AssetImage('assets/logo-bio.png'),
-    //             alignment: Alignment.center)));
   }
 }
