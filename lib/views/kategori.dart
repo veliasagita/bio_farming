@@ -1,3 +1,4 @@
+import 'package:bio_farming/views/tanaman.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,13 @@ class Kategori extends StatelessWidget {
                   return Card(
                     child: ListTile(
                       title: Text(doc.get('nama') ?? doc.get('nama')),
-                      subtitle: Text(doc.id),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Tanaman(doc.get('nama'), doc.id)));
+                      },
                     ),
                   );
                 }).toList(),
