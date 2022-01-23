@@ -21,6 +21,7 @@ class Kategori extends StatelessWidget {
                   return Card(
                     child: ListTile(
                       title: Text(doc.get('nama') ?? doc.get('nama')),
+                      subtitle: Text(doc.id),
                     ),
                   );
                 }).toList(),
