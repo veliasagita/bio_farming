@@ -9,13 +9,12 @@ class Add extends StatefulWidget {
 
 class _AddState extends State<Add> {
   final TextEditingController nama = TextEditingController();
-  final TextEditingController umur = TextEditingController();
 
   Future<void> simpan() async{
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-    CollectionReference users = firestore.collection("kategori");
+    CollectionReference kategori = firestore.collection("kategori");
 
-    await users.add({
+    await kategori.add({
       "nama": nama.text,
     });
     print("Data Tersimpan");

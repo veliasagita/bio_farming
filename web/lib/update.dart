@@ -19,9 +19,9 @@ class _UpdateState extends State<Update> {
 
   void simpanUpdate() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-    CollectionReference users = firestore.collection("kategori");
+    CollectionReference kategori = firestore.collection("kategori");
 
-    await users
+    await kategori
         .doc(widget.id)
         .update({"nama": txtNama.text}).then((value) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
