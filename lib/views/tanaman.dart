@@ -26,34 +26,36 @@ class Tanaman extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             } else {
-              return GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  padding: const EdgeInsets.all(10),
-                  children: snapshot.data!.docs.map((doc) {
-                    return GestureDetector(
-                        child: Container(
-                            height: MediaQuery.of(context).size.height / 4,
-                            width: MediaQuery.of(context).size.width / 3,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.grey.shade300),
-                            child: Center(
-                              child: Text(
-                                doc.get('nama') ?? doc.get('nama'),
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 18),
-                              ),
-                            )),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      Tanaman(doc.get('nama'), doc.id)));
-                        });
-                  }).toList());
+              return SafeArea(
+                  child: GridView.count(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      padding: const EdgeInsets.all(10),
+                      children: snapshot.data!.docs.map((doc) {
+                        return GestureDetector(
+                            child: Container(
+                                height: MediaQuery.of(context).size.height / 4,
+                                width: MediaQuery.of(context).size.width / 3,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.grey.shade300),
+                                child: Center(
+                                  child: Text(
+                                    doc.get('nama') ?? doc.get('nama'),
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
+                                )),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          Tanaman(doc.get('nama'), doc.id)));
+                            });
+                      }).toList()));
             }
           }),
     );

@@ -17,7 +17,8 @@ class Kategori extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             } else {
-              return ListView(
+              return SafeArea(
+                  child: ListView(
                 children: snapshot.data!.docs.map((doc) {
                   return Container(
                     padding: const EdgeInsets.all(10),
@@ -44,12 +45,12 @@ class Kategori extends StatelessWidget {
                                   MaterialPageRoute(
                                       builder: (context) =>
                                           Tanaman(doc.get('nama'), doc.id)));
-                            })
+                            }),
                       ],
                     ),
                   );
                 }).toList(),
-              );
+              ));
             }
           }),
     );
