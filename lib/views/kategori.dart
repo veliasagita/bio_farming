@@ -1,7 +1,6 @@
 import 'package:bio_farming/views/tanaman.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class Kategori extends StatelessWidget {
   const Kategori({Key? key}) : super(key: key);
