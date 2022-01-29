@@ -156,6 +156,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  gallery:
+    dependency: "direct main"
+    description:
+      name: gallery
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   http:
     dependency: transitive
     description:
