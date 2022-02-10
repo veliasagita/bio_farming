@@ -39,6 +39,7 @@ dependencies:
   cloud_firestore: ^3.1.5
   flutter_svg: ^1.0.0
   gallery: ^0.0.1
+  font_awesome_flutter: ^9.2.0
   
 dev_dependencies:
   flutter_test:
