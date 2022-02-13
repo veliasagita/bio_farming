@@ -1,6 +1,8 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Detail extends StatelessWidget {
   String nama;
@@ -34,7 +36,8 @@ class Detail extends StatelessWidget {
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Colors.black),
+                    color: Colors.black,
+                    decoration: TextDecoration.none),
               ),
             )),
         Divider(
@@ -57,44 +60,104 @@ class Detail extends StatelessWidget {
                   children: [
                     Text('Persiapan:\n\n' + persiapan + '\n',
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          color: Colors.black,
-                        ),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Colors.black,
+                            decoration: TextDecoration.none),
                         textAlign: TextAlign.justify),
                     Text('Persiapan Tanah:\n\n' + persiapanTanah + '\n',
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          color: Colors.black,
-                        ),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Colors.black,
+                            decoration: TextDecoration.none),
                         textAlign: TextAlign.justify),
                     Text(
                         persiapanBenih == ""
                             ? ''
                             : 'Persiapan Benih:\n\n' + persiapanBenih + '\n',
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          color: Colors.black,
-                        ),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Colors.black,
+                            decoration: TextDecoration.none),
                         textAlign: TextAlign.justify),
                     Text('Pasca Tanam:\n\n' + pascaTanam + '\n',
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          color: Colors.black,
-                        ),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Colors.black,
+                            decoration: TextDecoration.none),
                         textAlign: TextAlign.justify),
                     Text('Catatan:\n\n' + catatan,
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          color: Colors.black,
-                        ),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Colors.black,
+                            decoration: TextDecoration.none),
                         textAlign: TextAlign.justify),
                   ],
                 ))),
+        Divider(
+          color: Colors.grey.shade300,
+          height: 20,
+          thickness: 1,
+          indent: 20,
+          endIndent: 20,
+        ),
+        Center(
+          child: TextButton(
+              style: TextButton.styleFrom(
+                  backgroundColor: Colors.lightGreen.shade200,
+                  padding: const EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10))),
+              onPressed: () {},
+              child: Row(
+                children: const [
+                  Icon(FontAwesomeIcons.download,
+                      size: 10, color: Colors.green),
+                  Text('Download Cara Aplikasi Pupuk',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: Colors.black,
+                          decoration: TextDecoration.none),
+                      textAlign: TextAlign.justify),
+                ],
+              )),
+        ),
+        Row(
+          children: [
+            const Text('Informasi Lebih Lanjut :',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: Colors.black,
+                    decoration: TextDecoration.none,
+                    letterSpacing: 0.1),
+                textAlign: TextAlign.justify),
+            GestureDetector(
+              child: const Icon(
+                FontAwesomeIcons.youtubeSquare,
+                size: 30,
+                color: Colors.red,
+              ),
+              onTap: () {
+                launch(
+                    'https://www.youtube.com/channel/UCrhDkjkwg7zV9AwtJz53omQ');
+              },
+            ),
+            GestureDetector(
+              child: const Icon(
+                FontAwesomeIcons.whatsappSquare,
+                size: 30,
+                color: Colors.green,
+              ),
+              onTap: () {},
+            ),
+          ],
+        )
       ]),
     ));
   }
