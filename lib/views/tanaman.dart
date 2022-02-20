@@ -1,7 +1,8 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, avoid_print
 
 import 'package:bio_farming/views/detail.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 class Tanaman extends StatelessWidget {
@@ -13,6 +14,10 @@ class Tanaman extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final db = FirebaseFirestore.instance;
+    final storage = FirebaseStorage.instance;
+    String url =
+        storage.ref().child("Images/Anggur.jpg").getDownloadURL().toString();
+    print(url);
     return Scaffold(
       body: StreamBuilder<QuerySnapshot>(
           stream: db
