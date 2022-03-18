@@ -9,6 +9,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:pdf/pdf.dart';
+import 'package:open_file/open_file.dart';
+import 'package:path_provider/path_provider.dart';
 
 class Detail extends StatelessWidget {
   String nama;
@@ -171,7 +173,7 @@ class Detail extends StatelessWidget {
     ));
   }
 
-  Future generatePDF() async {
+  Future<void> generatePDF() async {
     // final pdf = pw.Document();
     // pdf.addPage(pw.Page(
     //     build: (pw.Context context) => pw.Center(child: pw.Text("test"))));
