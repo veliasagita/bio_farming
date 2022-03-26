@@ -8,7 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:url_launcher/url_launcher.dart';
-import 'package:pdf/pdf.dart';
 
 class Detail extends StatelessWidget {
   String nama;
@@ -171,70 +170,27 @@ class Detail extends StatelessWidget {
     ));
   }
 
-  Future generatePDF() async {
-    // final pdf = pw.Document();
-    // pdf.addPage(pw.Page(
-    //     build: (pw.Context context) => pw.Center(child: pw.Text("test"))));
-    // final file = File('Cara Penggunaan Pupuk Pada Tanaman ' + nama + ".pdf");
-    // await file.writeAsBytes(await pdf.save());
-    final doc = pw.Document(pageMode: PdfPageMode.outlines);
-    var data = await rootBundle
-        .load("assets/Times-New-Roman/times-new-roman-bold.ttf");
-    var myFont = pw.Font.ttf(data);
-    doc.addPage(pw.Page(
-        pageTheme: pw.PageTheme(
-            pageFormat: PdfPageFormat.a4.copyWith(
-                marginTop: 4, marginLeft: 4, marginBottom: 3, marginRight: 3),
-            orientation: pw.PageOrientation.portrait),
-        build: (context) {
-          return pw.Padding(
-              padding: const pw.EdgeInsets.all(10),
-              child: pw.Column(children: [
-                pw.Spacer(),
-                pw.RichText(
-                    text: pw.TextSpan(
-                        style: pw.TextStyle(
-                            color: PdfColor.fromHex('FFFFFF'),
-                            fontWeight: pw.FontWeight.bold,
-                            fontSize: 20,
-                            font: myFont),
-                        children: [
-                      const pw.TextSpan(
-                          text:
-                              'Prosedur Penggunaan Pupuk Organik Bio Farming'),
-                      pw.TextSpan(text: 'Tanaman ' + nama),
-                    ])),
-                pw.Container(
-                  alignment: pw.Alignment.topRight,
-                  height: 150,
-                  child: pw.PdfLogo(),
-                ),
-                // pw.Column(children: [
-                //   pw.Text('Persiapan:\n\n' + persiapan + '\n'),
-                //   pw.Text(
-                //     persiapanTanah == ""
-                //         ? ''
-                //         : 'Persiapan Tanah:\n\n' + persiapanTanah + '\n',
-                //   ),
-                //   pw.Text(
-                //     persiapanBenih == ""
-                //         ? ''
-                //         : 'Persiapan Benih:\n\n' + persiapanBenih + '\n',
-                //   ),
-                //   pw.Text(
-                //     'Pasca Tanam:\n\n' + pascaTanam + '\n',
-                //   ),
-                //   pw.Text(
-                //     'Catatan:\n\n' + catatan,
-                //   ),
-                // ])
-              ]));
-        }));
-    // return await doc.save();
+  void generatePDF() async {
+    final pdf = pw.Document();
+    final font =
+        await rootBundle.load("assets/Times-New-Roman/times-new-roman.ttf");
+    var myFont = pw.Font.ttf(font);
 
-    final output = await getExternalStorageDirectory();
-    print(output);
-    final file = File("$output/Prosedur" + nama + ".pdf");
-    await file.writeAsBytes(await doc.save());
+    pdf.addPage(
+      pw.Page(
+        build: (pw.Context context) => pw.Container(
+            child: pw.Column(children: [
+          pw.Text(
+            'Prosedur Penggunaan Pupuk Organik Bio Farming pada',
+          ),
+          pw.Text('Tanaman $nama'),
+        ])),
+      ),
+    );
+
+    var dir = await getExternalStorageDirectory();
+    await dir?.create(recursive: true);
+    final file = File('${dir!.path}/Prosedur $nama.pdf');
+    await file.writeAsBytes(await pdf.save());
   }
 }
