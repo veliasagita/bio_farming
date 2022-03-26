@@ -8,9 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:url_launcher/url_launcher.dart';
-import 'package:pdf/pdf.dart';
-import 'package:open_file/open_file.dart';
-import 'package:path_provider/path_provider.dart';
 
 class Detail extends StatelessWidget {
   String nama;
@@ -187,6 +184,22 @@ class Detail extends StatelessWidget {
             'Prosedur Penggunaan Pupuk Organik Bio Farming pada',
           ),
           pw.Text('Tanaman $nama'),
+          pw.Text(
+            persiapanTanah == ""
+                ? ''
+                : 'Persiapan Tanah:\n\n' + persiapanTanah + '\n\n',
+          ),
+          pw.Text(
+            persiapanBenih == ""
+                ? ''
+                : 'Persiapan Benih:\n\n' + persiapanBenih + '\n\n',
+          ),
+          pw.Text(
+            'Pasca Tanam:\n\n' + pascaTanam + '\n\n',
+          ),
+          pw.Text(
+            'Catatan:\n\n' + catatan,
+          ),
         ])),
       ),
     );
