@@ -1,27 +1,29 @@
 import 'dart:core';
-import 'sebelum_tanam.dart';
 
 class Komoditas {
   //variable
   String tanaman;
   String persiapan;
-  SebelumTanam sebelumTanam;
+  String persiapanTanah;
+  String? persiapanBenih;
   String pascaTanam;
   String catatan;
 
-  Komoditas(this.tanaman, this.persiapan, this.sebelumTanam, this.pascaTanam,
-      this.catatan);
+  Komoditas(this.tanaman, this.persiapan, this.persiapanTanah,
+      this.persiapanBenih, this.pascaTanam, this.catatan);
 
   Komoditas.fromJson(Map<String, dynamic> json)
       : tanaman = json['tanaman'],
         persiapan = json['persiapan'],
-        sebelumTanam = json['sebelumTanam'],
+        persiapanTanah = json['persiapanTanah'],
+        persiapanBenih = json['persiapanBenih'],
         pascaTanam = json['pascaTanam'],
         catatan = json['catatan'];
   Map<String, dynamic> toJson() => {
         'tanaman': tanaman,
         'persiapan': persiapan,
-        'sebelumTanam': sebelumTanam,
+        'persiapanTanah': persiapanTanah,
+        'persiapanBenih': persiapanBenih,
         'pascaTanam': pascaTanam,
         'catatan': catatan
       };
