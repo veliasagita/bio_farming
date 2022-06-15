@@ -45,10 +45,13 @@ class Tanaman extends StatelessWidget {
                                 padding: const EdgeInsets.all(20),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    color: Colors.grey.shade300),
-                                // image: DecorationImage(
-                                //   fit: BoxFit.cover,
-                                //   image: AssetImage(doc.get('image')),
+                                    color: Colors.grey.shade300,
+                                      //get image
+                                    // image: DecorationImage(
+                                    //   fit: BoxFit.cover,
+                                    //   image: AssetImage(doc.get('image')),
+                                    // ),
+                                ),
                                 child: Center(
                                   child: Text(
                                       doc.get('nama') ?? doc.get('nama'),
