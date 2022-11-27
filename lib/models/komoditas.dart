@@ -1,5 +1,7 @@
 import 'dart:core';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Komoditas {
   //variable
   String tanaman;
@@ -11,6 +13,14 @@ class Komoditas {
 
   Komoditas(this.tanaman, this.persiapan, this.persiapanTanah,
       this.persiapanBenih, this.pascaTanam, this.catatan);
+
+  Komoditas.fronSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+      : tanaman = snapshot['tanaman'],
+        persiapan = snapshot['persiapan'],
+        persiapanTanah = snapshot['persiapanTanah'],
+        persiapanBenih = snapshot['persiapanBenih'],
+        pascaTanam = snapshot['pascaTanam'],
+        catatan = snapshot['catatan'];
 
   Komoditas.fromJson(Map<String, dynamic> json)
       : tanaman = json['tanaman'],

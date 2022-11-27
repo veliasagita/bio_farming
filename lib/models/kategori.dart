@@ -12,5 +12,9 @@ class Kategori {
         name = json['name'],
         img = json['img'] ?? '';
 
-  Map<String, dynamic> toJson() => {'id': id, 'nama': name, "img": img,};
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'nama': name,
+        "img": img,
+      };
 }
