@@ -91,10 +91,10 @@ flutter:
         - asset: assets/Times-New-Roman/times-new-roman.ttf
         - asset: assets/Times-New-Roman/times-new-roman-italic.ttf
           style: italic
-        - asset: assets/Times-New-Roman/times-new-roman-bold.ttf
-          style: bold
-        - asset: assets/Times-New-Roman/times-new-roman-bold-italic.ttf
-          style: bold-italic
+        # - asset: assets/Times-New-Roman/times-new-roman-bold.ttf
+        #   style: bold
+        # - asset: assets/Times-New-Roman/times-new-roman-bold-italic.ttf
+        #   style: bold-italic
     - family: Montserrat
       fonts:
         - asset: assets\Montserrat\Montserrat-Regular.ttf
