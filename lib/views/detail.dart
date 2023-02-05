@@ -1,9 +1,8 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, deprecated_member_use
 
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -64,7 +63,7 @@ class Detail extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 child: Column(
                   children: [
-                    Text('Persiapan:\n\n' + persiapan + '\n',
+                    Text('Persiapan:\n\n$persiapan\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Montserrat',
@@ -75,7 +74,7 @@ class Detail extends StatelessWidget {
                     Text(
                         persiapanTanah == ""
                             ? ''
-                            : 'Persiapan Tanah:\n\n' + persiapanTanah + '\n',
+                            : 'Persiapan Tanah:\n\n$persiapanTanah\n',
                         style: const TextStyle(
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
@@ -86,7 +85,7 @@ class Detail extends StatelessWidget {
                     Text(
                         persiapanBenih == ""
                             ? ''
-                            : 'Persiapan Benih:\n\n' + persiapanBenih + '\n',
+                            : 'Persiapan Benih:\n\n$persiapanBenih\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Montserrat',
@@ -94,7 +93,7 @@ class Detail extends StatelessWidget {
                             color: Colors.black,
                             decoration: TextDecoration.none),
                         textAlign: TextAlign.justify),
-                    Text('Pasca Tanam:\n\n' + pascaTanam + '\n',
+                    Text('Pasca Tanam:\n\n$pascaTanam\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Montserrat',
@@ -102,7 +101,7 @@ class Detail extends StatelessWidget {
                             color: Colors.black,
                             decoration: TextDecoration.none),
                         textAlign: TextAlign.justify),
-                    Text('Catatan:\n\n' + catatan,
+                    Text('Catatan:\n\n$catatan',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Montserrat',
@@ -179,8 +178,6 @@ class Detail extends StatelessWidget {
 
   void generatePDF() async {
     final pdf = pw.Document();
-    final font = await rootBundle.load("assets/Times-New-Roman/Montserrat.ttf");
-    var myFont = pw.Font.ttf(font);
 
     pdf.addPage(
       pw.Page(
@@ -193,18 +190,18 @@ class Detail extends StatelessWidget {
           pw.Text(
             persiapanTanah == ""
                 ? ''
-                : 'Persiapan Tanah:\n\n' + persiapanTanah + '\n\n',
+                : 'Persiapan Tanah:\n\n$persiapanTanah\n\n',
           ),
           pw.Text(
             persiapanBenih == ""
                 ? ''
-                : 'Persiapan Benih:\n\n' + persiapanBenih + '\n\n',
+                : 'Persiapan Benih:\n\n$persiapanBenih\n\n',
           ),
           pw.Text(
-            'Pasca Tanam:\n\n' + pascaTanam + '\n\n',
+            'Pasca Tanam:\n\n$pascaTanam\n\n',
           ),
           pw.Text(
-            'Catatan:\n\n' + catatan,
+            'Catatan:\n\n$catatan',
           ),
         ])),
       ),
