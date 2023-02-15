@@ -178,9 +178,10 @@ class Detail extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print('ig');
-                          launchUrl(Uri.parse(
-                              'https://instagram.com/biosoltamax.id?igshid=Zjc2ZTc4Nzk='));
+                          launchUrl(
+                              Uri.parse(
+                                  'https://instagram.com/biosoltamax.id?igshid=Zjc2ZTc4Nzk='),
+                              mode: LaunchMode.externalApplication);
                         },
                         child: Image.asset('assets/instagram.png'),
                       ),
@@ -190,8 +191,10 @@ class Detail extends StatelessWidget {
                       GestureDetector(
                         child: Image.asset('assets/youtube.png'),
                         onTap: () {
-                          launchUrl(Uri.parse(
-                              'https://www.youtube.com/@pt.bandunginovasiorganikof1753'));
+                          launchUrl(
+                              Uri.parse(
+                                  'https://www.youtube.com/@pt.bandunginovasiorganikof1753'),
+                              mode: LaunchMode.externalApplication);
                         },
                       ),
                     ],
