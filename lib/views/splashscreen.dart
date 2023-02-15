@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'kategori.dart';
@@ -14,24 +16,25 @@ class _MySplashScreen extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 3),
+        const Duration(seconds: 5),
         () => Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const Kategori())));
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Scaffold(
-          backgroundColor: Colors.white,
-        ),
-        Container(
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/logo-bio.png'),
-                    alignment: Alignment.center))),
-      ],
-    );
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: SafeArea(
+          child: Stack(children: [
+            Image(
+              height: MediaQuery.of(context).size.height - 5,
+              fit: BoxFit.fill,
+              image: const AssetImage(
+                  'assets/Splash Screen App Bio Soltamax-01 2.png'),
+            ),
+            Positioned(bottom: 10, child: Container())
+          ]),
+        ));
   }
 }
