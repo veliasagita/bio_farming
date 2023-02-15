@@ -169,8 +169,7 @@ class Detail extends StatelessWidget {
                         child: Image.asset('assets/whatsapp.png'),
                         onTap: () {
                           launchUrl(
-                              Uri.parse(
-                                  'https://api.whatsapp.com/message/EXYXQ7HI3ZI5O1?autoload=1&app_absent=0'),
+                              Uri.parse('https://wa.me/message/EXYXQ7HI3ZI5O1'),
                               mode: LaunchMode.externalApplication);
                         },
                       ),
