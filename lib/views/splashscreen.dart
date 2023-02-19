@@ -26,15 +26,21 @@ class _MySplashScreen extends State<SplashScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Stack(children: [
-            Image(
+          child: Image(
               height: MediaQuery.of(context).size.height - 5,
+              width: MediaQuery.of(context).size.width - 5,
               fit: BoxFit.fill,
-              image: const AssetImage(
-                  'assets/Splash Screen App Bio Soltamax-01 2.png'),
-            ),
-            Positioned(bottom: 10, child: Container())
-          ]),
+              image:
+                  const AssetImage('assets/Splash Screen Bio Soltamax-01.png')),
+          // child: Stack(children: [
+          //   Image(
+          //     height: MediaQuery.of(context).size.height - 5,
+          //     fit: BoxFit.fill,
+          //     image: const AssetImage(
+          //         'assets/Splash Screen App Bio Soltamax-01 2.png'),
+          //   ),
+          //   Positioned(bottom: 10, child: Container())
+          // ]),
         ));
   }
 }

@@ -6,35 +6,35 @@ class Komoditas {
   //variable
   String tanaman;
   String persiapan;
-  String persiapanTanah;
+  String pesiapanTanah;
   String? persiapanBenih;
   String pascaTanam;
-  String catatan;
+  String Catatan;
 
-  Komoditas(this.tanaman, this.persiapan, this.persiapanTanah,
-      this.persiapanBenih, this.pascaTanam, this.catatan);
+  Komoditas(this.tanaman, this.persiapan, this.pesiapanTanah,
+      this.persiapanBenih, this.pascaTanam, this.Catatan);
 
-  Komoditas.fronSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+  Komoditas.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
       : tanaman = snapshot['tanaman'],
         persiapan = snapshot['persiapan'],
-        persiapanTanah = snapshot['persiapanTanah'],
+        pesiapanTanah = snapshot['pesiapanTanah'],
         persiapanBenih = snapshot['persiapanBenih'],
         pascaTanam = snapshot['pascaTanam'],
-        catatan = snapshot['catatan'];
+        Catatan = snapshot['Catatan'];
 
   Komoditas.fromJson(Map<String, dynamic> json)
       : tanaman = json['tanaman'],
         persiapan = json['persiapan'],
-        persiapanTanah = json['persiapanTanah'],
+        pesiapanTanah = json['pesiapanTanah'],
         persiapanBenih = json['persiapanBenih'],
         pascaTanam = json['pascaTanam'],
-        catatan = json['catatan'];
+        Catatan = json['Catatan'];
   Map<String, dynamic> toJson() => {
         'tanaman': tanaman,
         'persiapan': persiapan,
-        'persiapanTanah': persiapanTanah,
+        'pesiapanTanah': pesiapanTanah,
         'persiapanBenih': persiapanBenih,
         'pascaTanam': pascaTanam,
-        'catatan': catatan
+        'Catatan': Catatan
       };
 }

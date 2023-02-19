@@ -76,6 +76,7 @@ flutter:
     - assets/instagram.png
     - assets/LSO Logo-02-02 1.png
     - assets/Splash Screen App Bio Soltamax-01 2.png
+    - assets/Splash Screen Bio Soltamax-01.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,6 +1,9 @@
+import 'package:bio_farming/models/komoditas.dart';
 import 'package:bio_farming/views/tanaman.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+import 'detail.dart';
 
 class Kategori extends StatefulWidget {
   const Kategori({Key? key}) : super(key: key);
@@ -12,8 +15,13 @@ class Kategori extends StatefulWidget {
 class _KategoriState extends State<Kategori> {
   final db = FirebaseFirestore.instance;
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
   initSearch(String textEntered) async {
-    var data;
+    Komoditas data;
     await db.collection('kategori').snapshots().forEach((element) {
       element.docs.toList().forEach((dt) {
         db
@@ -23,27 +31,36 @@ class _KategoriState extends State<Kategori> {
             .snapshots()
             .forEach((ada) {
           ada.docs.toList().forEach((i) {
-            if (i.get('nama') == textEntered) {
-              data = {
-                "nama": i.get('nama'),
-                "persiapan": i.get('persiapan'),
-                "persiapanTanah": i.get('pesiapanTanah'),
-                "persiapanBenih": i.get('persiapanBenih'),
-                "pascaTanam": i.get('pascaTanam'),
-                "catatan": i.get("Catatan")
-              };
-              // ignore: void_checks
-              return data;
+            if (i.get('nama').toString().toLowerCase() ==
+                textEntered.toLowerCase()) {
+              data = Komoditas(
+                  i.get('nama'),
+                  i.get('persiapan'),
+                  i.get('pesiapanTanah'),
+                  i.get('persiapanBenih') ?? i.get('persiapanBenih'),
+                  i.get('pascaTanam'),
+                  i.get('Catatan'));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => Detail(
+                            data.tanaman,
+                            data.persiapan,
+                            data.pesiapanTanah,
+                            data.persiapanBenih!,
+                            data.pascaTanam,
+                            data.Catatan,
+                          )));
+            } else {
+              AlertDialog(
+                title: Text('Maaf data tidak ditemukan.'),
+                content: Text('Periksa kembali, awal huruf harus kapital !'),
+              );
             }
           });
         });
       });
     });
-  }
-
-  @override
-  void initState() {
-    super.initState();
   }
 
   @override
@@ -57,8 +74,13 @@ class _KategoriState extends State<Kategori> {
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 5 / 100,
                   width: MediaQuery.of(context).size.width - 30,
-                  child: const TextField(
-                    decoration: InputDecoration(
+                  child: TextField(
+                    onChanged: ((value) {
+                      setState(() {
+                        initSearch(value);
+                      });
+                    }),
+                    decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(

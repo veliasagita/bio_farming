@@ -139,7 +139,7 @@ class Detail extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                             Text(
-                                'DOWNLOAD CARA APLIKASI PUPUK ORGANIK ECO FARMING',
+                                'DOWNLOAD CARA APLIKASI PUPUK ORGANIK BIO SOLTAMAX',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Roboto',

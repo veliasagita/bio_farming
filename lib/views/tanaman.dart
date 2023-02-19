@@ -73,6 +73,14 @@ class Tanaman extends StatelessWidget {
                                                 20,
                                           ),
                                           Center(
+                                            heightFactor: doc
+                                                        .get('nama')
+                                                        .toString()
+                                                        .length
+                                                        .ceilToDouble() >
+                                                    20
+                                                ? 1
+                                                : 2,
                                             child: Text(
                                                 doc.get('nama') ??
                                                     doc.get('nama'),
