@@ -1,4 +1,4 @@
-package com.example.bio_farming
+package com.cortanatechdev.bio_soltamax
 
 import io.flutter.embedding.android.FlutterActivity
 

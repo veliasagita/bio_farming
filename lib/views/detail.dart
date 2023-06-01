@@ -1,10 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:pdf/widgets.dart' as pw;
 import 'package:url_launcher/url_launcher.dart';
 
 class Detail extends StatelessWidget {
@@ -61,7 +57,7 @@ class Detail extends StatelessWidget {
                     endIndent: 20,
                   ),
                   Container(
-                      height: MediaQuery.of(context).size.height * 60 / 100,
+                      height: MediaQuery.of(context).size.height * 70 / 100,
                       width: MediaQuery.of(context).size.width,
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
@@ -126,30 +122,30 @@ class Detail extends StatelessWidget {
                     indent: 20,
                     endIndent: 20,
                   ),
-                  Center(
-                    child: TextButton(
-                        style: TextButton.styleFrom(
-                            backgroundColor:
-                                const Color.fromARGB(255, 15, 109, 56),
-                            padding: const EdgeInsets.all(10),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        onPressed: generatePDF,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                                'DOWNLOAD CARA APLIKASI PUPUK ORGANIK BIO SOLTAMAX',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Roboto',
-                                    fontSize: 12,
-                                    color: Colors.white,
-                                    decoration: TextDecoration.none),
-                                textAlign: TextAlign.justify),
-                          ],
-                        )),
-                  ),
+                  // Center(
+                  //   child: TextButton(
+                  //       style: TextButton.styleFrom(
+                  //           backgroundColor:
+                  //               const Color.fromARGB(255, 15, 109, 56),
+                  //           padding: const EdgeInsets.all(10),
+                  //           shape: RoundedRectangleBorder(
+                  //               borderRadius: BorderRadius.circular(10))),
+                  //       onPressed: generatePDF,
+                  //       child: Row(
+                  //         mainAxisAlignment: MainAxisAlignment.center,
+                  //         children: const [
+                  //           Text(
+                  //               'DOWNLOAD CARA APLIKASI PUPUK ORGANIK BIO SOLTAMAX',
+                  //               style: TextStyle(
+                  //                   fontWeight: FontWeight.bold,
+                  //                   fontFamily: 'Roboto',
+                  //                   fontSize: 12,
+                  //                   color: Colors.white,
+                  //                   decoration: TextDecoration.none),
+                  //               textAlign: TextAlign.justify),
+                  //         ],
+                  //       )),
+                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -204,40 +200,40 @@ class Detail extends StatelessWidget {
             )));
   }
 
-  void generatePDF() async {
-    final pdf = pw.Document();
+  // void generatePDF() async {
+  //   final pdf = pw.Document();
 
-    pdf.addPage(
-      pw.Page(
-        build: (pw.Context context) => pw.Container(
-            child: pw.Column(children: [
-          pw.Text(
-            'Prosedur Penggunaan Pupuk Organik Bio Farming pada',
-          ),
-          pw.Text('Tanaman $nama'),
-          pw.Text(
-            persiapanTanah == ""
-                ? ''
-                : 'Persiapan Tanah:\n\n$persiapanTanah\n\n',
-          ),
-          pw.Text(
-            persiapanBenih == ""
-                ? ''
-                : 'Persiapan Benih:\n\n$persiapanBenih\n\n',
-          ),
-          pw.Text(
-            'Pasca Tanam:\n\n$pascaTanam\n\n',
-          ),
-          pw.Text(
-            'Catatan:\n\n$catatan',
-          ),
-        ])),
-      ),
-    );
+  //   pdf.addPage(
+  //     pw.Page(
+  //       build: (pw.Context context) => pw.Container(
+  //           child: pw.Column(children: [
+  //         pw.Text(
+  //           'Prosedur Penggunaan Pupuk Organik Bio Farming pada',
+  //         ),
+  //         pw.Text('Tanaman $nama'),
+  //         pw.Text(
+  //           persiapanTanah == ""
+  //               ? ''
+  //               : 'Persiapan Tanah:\n\n$persiapanTanah\n\n',
+  //         ),
+  //         pw.Text(
+  //           persiapanBenih == ""
+  //               ? ''
+  //               : 'Persiapan Benih:\n\n$persiapanBenih\n\n',
+  //         ),
+  //         pw.Text(
+  //           'Pasca Tanam:\n\n$pascaTanam\n\n',
+  //         ),
+  //         pw.Text(
+  //           'Catatan:\n\n$catatan',
+  //         ),
+  //       ])),
+  //     ),
+  //   );
 
-    var dir = await getExternalStorageDirectory();
-    await dir?.create(recursive: true);
-    final file = File('${dir!.path}/Prosedur $nama.pdf');
-    await file.writeAsBytes(await pdf.save());
-  }
+  //   var dir = await getExternalStorageDirectory();
+  //   await dir?.create(recursive: true);
+  //   final file = File('$dir?path/Prosedur $nama.pdf');
+  //   await file.writeAsBytes(await pdf.save());
+  // }
 }

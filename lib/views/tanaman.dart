@@ -1,15 +1,17 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'detail.dart';
 
 class Tanaman extends StatelessWidget {
-  final db = FirebaseFirestore.instance;
-
   String namaKategori;
   String id;
 
   Tanaman(this.namaKategori, this.id, {Key? key}) : super(key: key);
+
+  final db = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +80,7 @@ class Tanaman extends StatelessWidget {
                                                         .toString()
                                                         .length
                                                         .ceilToDouble() >
-                                                    20
+                                                    12
                                                 ? 1
                                                 : 2,
                                             child: Text(

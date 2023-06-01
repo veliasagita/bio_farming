@@ -52,10 +52,10 @@ class _KategoriState extends State<Kategori> {
                             data.Catatan,
                           )));
             } else {
-              AlertDialog(
-                title: Text('Maaf data tidak ditemukan.'),
-                content: Text('Periksa kembali, awal huruf harus kapital !'),
-              );
+              // const AlertDialog(
+              //   title: Text('Maaf data tidak ditemukan.'),
+              //   content: Text('Periksa kembali, awal huruf harus kapital !'),
+              // );
             }
           });
         });
